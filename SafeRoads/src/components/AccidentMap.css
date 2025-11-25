@@ -1,0 +1,60 @@
+/* Custom styles for Leaflet markers */
+.custom-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Ensure map container respects parent dimensions */
+.leaflet-container {
+  height: 100% !important;
+  width: 100% !important;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* Animation classes for pulsing effect */
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Ensure Leaflet popup is above other elements */
+.leaflet-popup-pane {
+  z-index: 700 !important;
+}
+
+/* Style for the popup */
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.leaflet-popup-content {
+  margin: 0;
+}
+
+/* Fix marker icon positioning */
+.leaflet-marker-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
