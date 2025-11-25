@@ -23,18 +23,20 @@ export function Dashboard({ accidents, sensors, onUpdateAccidentStatus }: Dashbo
   return (
     <div className="h-full grid grid-cols-12 gap-4">
       {/* Main Map Area */}
-      <div className="col-span-8 h-full">
-        <AccidentMap
-          accidents={accidents}
-          selectedAccident={selectedAccident}
-          onAccidentClick={handleAccidentSelect}
-        />
+      <div className="col-span-8 h-full overflow-hidden">
+        <div className="h-full">
+          <AccidentMap
+            accidents={accidents}
+            selectedAccident={selectedAccident}
+            onAccidentClick={handleAccidentSelect}
+          />
+        </div>
       </div>
 
       {/* Right Sidebar */}
-      <div className="col-span-4 h-full space-y-4">
+      <div className="col-span-4 h-full space-y-4 overflow-hidden">
         {/* Sensor Status */}
-        <div className="h-[280px]">
+        <div className="h-[280px] overflow-hidden">
           <SensorStatus sensors={sensors} />
         </div>
 
